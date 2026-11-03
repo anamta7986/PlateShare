@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Find Food | PlateShare</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="pages.css">
+</head>
+<script>
+    const toggle = document.getElementById("menuToggle");
+    const nav = document.getElementById("navLinks");
+
+    if (toggle && nav) {
+        toggle.addEventListener("click", function () {
+            const isOpen = nav.classList.toggle("show");
+            toggle.setAttribute("aria-expanded", isOpen);
+        });
+    }
+</script>
+<body>
+
+<header class="navbar">
+    <a href="index.html" class="logo">
+        <div class="logo-icon">♧</div>
+        <div>
+            <h2>Plate<span>Share</span></h2>
+            <p>Share a Plate, Care for People</p>
+        </div>
+    </a>
+
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="find-food.html" class="active">Find Food</a>
+        <a href="donate-food.html">Donate Food</a>
+        <a href="ngos.html">For NGOs</a>
+        <a href="about.html">About</a>
+    </nav>
+
+    <div class="nav-buttons">
+        <a href="login.html" class="btn btn-outline">Login</a>
+        <a href="signup.html" class="btn btn-primary">Sign Up</a>
+    </div>
+</header>
+
+<main class="page-content">
+    <p class="eyebrow">DISCOVER DONATIONS</p>
+    <h1>Find Food Near You</h1>
+
+    <p>
+        Explore surplus food listings and connect with participating
+        restaurants to coordinate a donation.
+    </p>
+
+    <div class="info-card">
+        <h2>🍱 Available Food Donations</h2>
+        <p>
+            Food listings will appear here once restaurants start
+            posting donations.
+        </p>
+        <a href="signup.html" class="btn btn-primary">
+            Register as an NGO
+        </a>
+    </div>
+</main>
+
+<footer class="footer">
+    <h3>PlateShare</h3>
+    <p>Share a Plate, Care for People.</p>
+    <a href="index.html">Back to Home</a>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+.page-content {
+    min-height: 65vh;
+    padding: 80px 8%;
+    background: #fbfbf0;
+}
+
+.page-content h1 {
+    margin-bottom: 20px;
+    color: #073e2b;
+    font-family: "Nunito", sans-serif;
+    font-size: clamp(35px, 5vw, 55px);
+}
+
+.page-content > p:not(.eyebrow) {
+    max-width: 750px;
+    margin-bottom: 25px;
+    color: #526259;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.info-card {
+    max-width: 750px;
+    margin-top: 35px;
+    padding: 30px;
+    background: white;
+    border: 1px solid #e5eddf;
+    border-radius: 20px;
+    box-shadow: 0 12px 35px #164b3510;
+}
+
+.info-card h2 {
+    margin-bottom: 15px;
+    color: #164b35;
+    font-family: "Nunito", sans-serif;
+}
+
+.info-card h2:not(:first-child) {
+    margin-top: 25px;
+}
+
+.info-card p,
+.info-card li {
+    color: #526259;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.info-card ol {
+    padding-left: 22px;
+    margin-bottom: 25px;
+}
+
+.info-card .btn {
+    margin-top: 22px;
+}
+
+@media (max-width: 780px) {
+    .page-content {
+        padding: 50px 22px;
+    }
+
+    .info-card {
+        padding: 23px;
+    }
+}

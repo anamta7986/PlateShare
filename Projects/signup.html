@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sign Up | PlateShare</title>
+
+    <link rel="stylesheet" href="login.css">
+</head>
+<script>
+    const toggle = document.getElementById("menuToggle");
+    const nav = document.getElementById("navLinks");
+
+    if (toggle && nav) {
+        toggle.addEventListener("click", function () {
+            const isOpen = nav.classList.toggle("show");
+            toggle.setAttribute("aria-expanded", isOpen);
+        });
+    }
+</script>
+
+<body>
+
+    <div class="auth-card">
+
+        <a href="index.html" class="brand">PlateShare</a>
+
+        <h1>Join PlateShare</h1>
+
+        <p class="subtitle">
+            Together, we can reduce food waste.
+        </p>
+
+        <form id="signupForm">
+
+            <label for="name">Full Name</label>
+            <input
+                type="text"
+                id="name"
+                placeholder="Enter your name"
+                required
+            >
+
+            <label for="email">Email Address</label>
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter your email"
+                required
+            >
+
+            <label for="role">Register As</label>
+            <select id="role" required>
+                <option value="">Choose account type</option>
+                <option value="restaurant">Restaurant</option>
+                <option value="ngo">NGO / Shelter</option>
+            </select>
+
+            <label for="password">Create Password</label>
+            <input
+                type="password"
+                id="password"
+                placeholder="Create a password"
+                minlength="8"
+                required
+            >
+
+            <button type="submit">Create Account</button>
+
+        </form>
+
+        <p class="switch-page">
+            Already have an account?
+            <a href="login.html">Login</a>
+        </p>
+
+        <a href="index.html" class="back-home">← Back to Home</a>
+
+    </div>
+
+    <script>
+        document.getElementById("signupForm").addEventListener(
+            "submit",
+            function(event) {
+                event.preventDefault();
+
+                alert(
+                    "Registration form design is working! Connect authentication to create real accounts."
+                );
+            }
+        );
+    </script>
+
+    
+
+</body>
+</html>

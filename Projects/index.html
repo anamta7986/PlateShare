@@ -1,0 +1,290 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PlateShare | Share a Plate, Care for People</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+
+
+
+<script>
+    const toggle = document.getElementById("menuToggle");
+    const nav = document.getElementById("navLinks");
+
+    if (toggle && nav) {
+        toggle.addEventListener("click", function () {
+            const isOpen = nav.classList.toggle("show");
+            toggle.setAttribute("aria-expanded", isOpen);
+        });
+    }
+</script>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase-client.js"></script>
+    
+
+    <!-- Navigation Bar -->
+    <header class="navbar">
+
+        <a href="#home" class="logo">
+            <div class="logo-icon">♧</div>
+
+            <div>
+                <h2>Plate<span>Share</span></h2>
+                <p>Share a Plate, Care for People</p>
+            </div>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle"
+                aria-label="Toggle navigation" aria-expanded="false">
+            ☰
+        </button>
+        <nav class="nav-links"
+
+id="navLinks">
+
+<a href="#home" class="active">Home</a>
+<a href="find-food.html"  class="btn-outline">Find Food
+    </a>
+<a href="donate-food.html" class="btn-outline">Donate
+<a href="ngos.html"  class="btn-outline">For NGOs</a> 
+<a href="about.html" class="btn-outline">About</a>
+<a href="leaderboard.html" class="btn-outline">Leaderboard</a>
+
+</nav>
+
+
+        
+
+        
+        <div class="nav-buttons">
+    <a href="login.html" class="btn btn-outline">Login</a>
+    <a href="signup.html" class="btn btn-primary">Sign Up</a>
+</div>
+
+        
+    </header>
+
+
+    <!-- Hero Section -->
+    <main>
+
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+
+                <p class="eyebrow">FOOD SHARING PLATFORM</p>
+
+                <h1>
+                    Good Food<br>
+                    Should Reach<br>
+                    <span>People,</span> Not Bins.
+                </h1>
+
+                <p class="hero-description">
+                    PlateShare connects restaurants with verified NGOs
+                    and shelters to turn surplus food into shared meals.
+                    Together, we reduce food waste and fight hunger.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#donate" class="btn btn-primary hero-btn">
+                        ♧ &nbsp; Donate Food
+                        <span>→</span>
+                    </a>
+
+                    <a href="#find-food" class="btn btn-outline hero-btn">
+                        ♟ &nbsp; Request Food
+                        <span>→</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-image-container">
+
+                <div class="image-background"></div>
+
+                <img
+                    src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1200&q=85"
+                    alt="Fresh food prepared for sharing"
+                    class="hero-image"
+                >
+
+                <div class="image-note">
+                    Less food waste<br>
+                    More happy meals
+                    <span>♡</span>
+                </div>
+
+                <div class="leaf-decoration">❧</div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Features Section -->
+        <section class="features" id="about">
+
+            <article class="feature-card">
+                <div class="feature-icon">♜</div>
+                <h3>For Restaurants</h3>
+                <p>List surplus food easily<br>and make a difference.</p>
+            </article>
+
+            <article class="feature-card" id="ngos">
+                <div class="feature-icon">♟</div>
+                <h3>For NGOs</h3>
+                <p>Discover nearby donations<br>and request food.</p>
+            </article>
+
+            <article class="feature-card">
+                <div class="feature-icon">✓</div>
+                <h3>Verified Partners</h3>
+                <p>Safe, trusted and<br>transparent.</p>
+            </article>
+
+            <article class="feature-card">
+                <div class="feature-icon">⌖</div>
+                <h3>Pickup Coordination</h3>
+                <p>Plan and track pickups<br>with ease.</p>
+            </article>
+
+            <article class="feature-card">
+                <div class="feature-icon">❧</div>
+                <h3>Greater Impact</h3>
+                <p>Less food waste.<br>More communities fed.</p>
+            </article>
+
+        </section>
+
+
+        <!-- Impact Section -->
+        <section class="impact-section">
+
+            <div class="impact-quote">
+                “Small actions<br>
+                create a big impact”
+                <span>♡</span>
+            </div>
+
+            <div class="impact-container">
+
+                <h2>Our Impact</h2>
+
+                <div class="impact-grid">
+
+                    <div class="impact-item">
+                        <div class="impact-icon">🍽️</div>
+                        <h3>12,500+</h3>
+                        <p>Meals Shared</p>
+                    </div>
+
+                    <div class="impact-item">
+                        <div class="impact-icon">🌿</div>
+                        <h3>8,200+ kg</h3>
+                        <p>Food Saved</p>
+                    </div>
+
+                    <div class="impact-item">
+                        <div class="impact-icon">🏢</div>
+                        <h3>150+</h3>
+                        <p>Partner Restaurants</p>
+                    </div>
+
+                    <div class="impact-item">
+                        <div class="impact-icon">👥</div>
+                        <h3>75+</h3>
+                        <p>NGOs & Shelters</p>
+                    </div>
+
+                </div>
+
+                <p class="demo-note">
+                    Illustrative figures for design purposes.
+                </p>
+
+            </div>
+
+            <div class="impact-quote quote-right">
+                <div class="food-icon">🥗</div>
+                <p>
+                    Because<br>
+                    every meal<br>
+                    matters ♡
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- Call To Action -->
+        <section class="join-section" id="donate">
+
+            <p class="eyebrow">MAKE A DIFFERENCE TODAY</p>
+
+            <h2>Have Extra Food?<br>Someone Nearby May Need It.</h2>
+
+            <p>
+                Join restaurants and community organisations
+                working toward a world with less food waste.
+            </p>
+
+            <div class="join-buttons">
+
+                <a href="#signup" class="btn btn-primary">
+                    Become a Food Partner →
+                </a>
+
+                <a href="#find-food" class="btn btn-outline">
+                    Explore Donations →
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <h3>PlateShare</h3>
+
+        <p>Share a Plate, Care for People.</p>
+
+        <p>© <span id="year"></span> PlateShare | Hackathon Project</p>
+
+    </footer>
+
+
+    <!-- Small mobile-navigation script -->
+    <script>
+        const menuToggle = document.getElementById("menuToggle");
+        const navLinks = document.getElementById("navLinks");
+
+        menuToggle.addEventListener("click", function () {
+            const isOpen = navLinks.classList.toggle("show");
+
+            menuToggle.setAttribute("aria-expanded", isOpen);
+        });
+
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,565 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>For NGOs | PlateShare</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+        background: #f8faf7;
+        color: #20332c;
+    }
+
+    /* NAVIGATION BAR */
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 5%;
+        background: white;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+        flex-wrap: wrap;
+        gap: 18px;
+    }
+
+    .logo {
+        font-size: 30px;
+        font-weight: 800;
+        color: #20332c;
+        text-decoration: none;
+    }
+
+    .logo span {
+        color: #659c4c;
+    }
+
+    .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        flex-wrap: wrap;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: #333;
+        font-size: 16px;
+        transition: 0.3s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+        color: #659c4c;
+    }
+
+    .nav-links .signup {
+        background: #153d2b;
+        color: white;
+        padding: 12px 22px;
+        border-radius: 30px;
+    }
+
+    .nav-links .signup:hover {
+        background: #659c4c;
+        color: white;
+    }
+
+    /* HERO SECTION */
+
+    .hero {
+        text-align: center;
+        padding: 75px 20px 65px;
+        background: linear-gradient(135deg, #edf5e8, #ffffff);
+    }
+
+    .tag {
+        display: inline-block;
+        background: #e0efd7;
+        color: #477638;
+        padding: 9px 17px;
+        border-radius: 30px;
+        font-size: 13px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        margin-bottom: 22px;
+    }
+
+    .hero h1 {
+        font-size: clamp(32px, 5vw, 54px);
+        line-height: 1.2;
+        margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+        color: #659c4c;
+    }
+
+    .hero p {
+        max-width: 700px;
+        margin: auto;
+        color: #64716b;
+        font-size: 17px;
+        line-height: 1.8;
+    }
+
+    .hero-button {
+        display: inline-block;
+        margin-top: 28px;
+        padding: 14px 26px;
+        background: #153d2b;
+        color: white;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .hero-button:hover {
+        background: #659c4c;
+        transform: translateY(-2px);
+    }
+
+    /* BENEFITS */
+
+    .benefits {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+        max-width: 1100px;
+        margin: 45px auto;
+        padding: 0 20px;
+    }
+
+    .benefit-card {
+        background: white;
+        text-align: center;
+        padding: 28px 22px;
+        border-radius: 18px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
+    }
+
+    .benefit-icon {
+        font-size: 35px;
+        margin-bottom: 14px;
+    }
+
+    .benefit-card h3 {
+        margin-bottom: 10px;
+    }
+
+    .benefit-card p {
+        color: #6c7771;
+        line-height: 1.6;
+        font-size: 14px;
+    }
+
+    /* NGO SECTION */
+
+    .ngo-section {
+        max-width: 1150px;
+        margin: 70px auto;
+        padding: 0 20px;
+    }
+
+    .section-heading {
+        text-align: center;
+        margin-bottom: 35px;
+    }
+
+    .section-heading h2 {
+        font-size: 34px;
+        margin-bottom: 12px;
+    }
+
+    .section-heading p {
+        color: #6c7771;
+        line-height: 1.7;
+    }
+
+    .ngo-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+
+    .ngo-card {
+        background: white;
+        border: 1px solid #e8eee5;
+        border-radius: 18px;
+        padding: 28px;
+        transition: 0.3s;
+        box-shadow: 0 5px 18px rgba(0, 0, 0, 0.03);
+    }
+
+    .ngo-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 25px rgba(30, 70, 40, 0.09);
+    }
+
+    .ngo-icon {
+        width: 65px;
+        height: 65px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #eaf4e5;
+        border-radius: 16px;
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+    .ngo-card h3 {
+        font-size: 21px;
+        margin-bottom: 12px;
+    }
+
+    .ngo-card p {
+        color: #6c7771;
+        line-height: 1.7;
+        font-size: 14px;
+        margin-bottom: 18px;
+    }
+
+    .ngo-type {
+        display: inline-block;
+        background: #f0f6ed;
+        color: #548343;
+        padding: 7px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: bold;
+        margin-bottom: 18px;
+    }
+
+    .ngo-button {
+        display: block;
+        text-align: center;
+        padding: 12px;
+        border: 1px solid #659c4c;
+        border-radius: 10px;
+        color: #477638;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .ngo-button:hover {
+        background: #659c4c;
+        color: white;
+    }
+
+    /* JOIN SECTION */
+
+    .join-section {
+        background: #173e2c;
+        color: white;
+        text-align: center;
+        padding: 65px 20px;
+        margin-top: 70px;
+    }
+
+    .join-section h2 {
+        font-size: 34px;
+        margin-bottom: 18px;
+    }
+
+    .join-section p {
+        max-width: 650px;
+        margin: auto;
+        line-height: 1.8;
+        color: #d5e4d9;
+    }
+
+    .join-button {
+        display: inline-block;
+        margin-top: 25px;
+        padding: 14px 28px;
+        background: white;
+        color: #173e2c;
+        text-decoration: none;
+        border-radius: 30px;
+        font-weight: bold;
+    }
+
+    .join-button:hover {
+        background: #dcefd3;
+    }
+
+    /* FOOTER */
+
+    footer {
+        background: #102c20;
+        color: #d0ddd5;
+        text-align: center;
+        padding: 25px 15px;
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    footer span {
+        color: #8bc875;
+    }
+
+    /* RESPONSIVE DESIGN */
+
+    @media (max-width: 900px) {
+        .navbar {
+            justify-content: center;
+        }
+
+        .nav-links {
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .benefits,
+        .ngo-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 600px) {
+        .benefits,
+        .ngo-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .navbar {
+            padding: 20px 15px;
+        }
+
+        .logo {
+            font-size: 27px;
+        }
+
+        .nav-links {
+            gap: 14px;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+        }
+
+        .hero {
+            padding: 55px 18px;
+        }
+
+        .section-heading h2,
+        .join-section h2 {
+            font-size: 28px;
+        }
+    }
+</style>
+
+</head><body><!-- NAVIGATION BAR -->
+
+<header class="navbar">
+
+    <a href="index.html" class="logo">
+        Plate<span>Share</span>
+    </a>
+
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="find-food.html">Find Food</a>
+        <a href="donate-food.html">Donate Food</a>
+        <a href="ngos.html" class="active">For NGOs</a>
+        <a href="about.html">About</a>
+        <a href="login.html">Login</a>
+        <a href="signup.html" class="signup">Sign Up</a>
+    </nav>
+
+</header>
+
+
+<!-- HERO SECTION -->
+
+<section class="hero">
+
+    <span class="tag">TOGETHER AGAINST FOOD WASTE</span>
+
+    <h1>
+        Good Food. <span>Greater Impact.</span>
+    </h1>
+
+    <p>
+        Are you an NGO, shelter, orphanage, or community kitchen?
+        Join PlateShare to connect with food donors, collect surplus
+        food, and help provide meals to people who need them.
+    </p>
+
+    <a href="signup.html" class="hero-button">
+        Join PlateShare →
+    </a>
+
+</section>
+
+
+<!-- BENEFITS SECTION -->
+
+<section class="benefits">
+
+    <div class="benefit-card">
+        <div class="benefit-icon">🍱</div>
+        <h3>Receive Food Donations</h3>
+        <p>
+            Connect with food donors who want to share their
+            surplus food with your organization.
+        </p>
+    </div>
+
+    <div class="benefit-card">
+        <div class="benefit-icon">🤝</div>
+        <h3>Build Connections</h3>
+        <p>
+            Develop partnerships with restaurants, food businesses,
+            and other community organizations.
+        </p>
+    </div>
+
+    <div class="benefit-card">
+        <div class="benefit-icon">🌱</div>
+        <h3>Create Real Impact</h3>
+        <p>
+            Help reduce food waste while supporting people
+            experiencing food insecurity.
+        </p>
+    </div>
+
+</section>
+
+
+<!-- NGO TYPES SECTION -->
+
+<section class="ngo-section">
+
+    <div class="section-heading">
+        <h2>Who Can Join Us?</h2>
+        <p>
+            PlateShare welcomes organizations working to make
+            food accessible to more people.
+        </p>
+    </div>
+
+    <div class="ngo-grid">
+
+        <div class="ngo-card">
+            <div class="ngo-icon">🏠</div>
+            <span class="ngo-type">COMMUNITY SUPPORT</span>
+            <h3>Homeless Shelters</h3>
+            <p>
+                Help provide safe, nutritious meals to people
+                who need shelter and food assistance.
+            </p>
+            <a href="signup.html" class="ngo-button">
+                Register Your NGO →
+            </a>
+        </div>
+
+        <div class="ngo-card">
+            <div class="ngo-icon">👧</div>
+            <span class="ngo-type">CHILD WELFARE</span>
+            <h3>Orphanages</h3>
+            <p>
+                Connect with local food donors to help support
+                children in your care.
+            </p>
+            <a href="signup.html" class="ngo-button">
+                Register Your NGO →
+            </a>
+        </div>
+
+        <div class="ngo-card">
+            <div class="ngo-icon">🍲</div>
+            <span class="ngo-type">MEAL DISTRIBUTION</span>
+            <h3>Community Kitchens</h3>
+            <p>
+                Find surplus food that can support meal preparation
+                and community feeding programs.
+            </p>
+            <a href="signup.html" class="ngo-button">
+                Register Your NGO →
+            </a>
+        </div>
+
+        <div class="ngo-card">
+            <div class="ngo-icon">❤️</div>
+            <span class="ngo-type">SOCIAL WELFARE</span>
+            <h3>Charitable Organizations</h3>
+            <p>
+                Expand your food assistance efforts by building
+                connections with participating donors.
+            </p>
+            <a href="signup.html" class="ngo-button">
+                Register Your NGO →
+            </a>
+        </div>
+
+        <div class="ngo-card">
+            <div class="ngo-icon">🧑‍🤝‍🧑</div>
+            <span class="ngo-type">COMMUNITY SERVICE</span>
+            <h3>Volunteer Groups</h3>
+            <p>
+                Coordinate with registered organizations to
+                help distribute available food donations.
+            </p>
+            <a href="signup.html" class="ngo-button">
+                Register Your NGO →
+            </a>
+        </div>
+
+        <div class="ngo-card">
+            <div class="ngo-icon">🌍</div>
+            <span class="ngo-type">SOCIAL IMPACT</span>
+            <h3>Other NGOs</h3>
+            <p>
+                If your organization works to support communities,
+                explore how PlateShare can help your mission.
+            </p>
+            <a href="signup.html" class="ngo-button">
+                Register Your NGO →
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- JOIN SECTION -->
+
+<section class="join-section">
+
+    <h2>Let's Turn Surplus Into Support.</h2>
+
+    <p>
+        Every meal shared is an opportunity to make a difference.
+        Join PlateShare and help build a community where good food
+        reaches people instead of going to waste.
+    </p>
+
+    <a href="signup.html" class="join-button">
+        Get Started Today →
+    </a>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+    <p>
+        © 2026 PlateShare. Made with <span>♥</span> to reduce
+        food waste and support communities.
+    </p>
+</footer>
+
+</body>
+</html>
